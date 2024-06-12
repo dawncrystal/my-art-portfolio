@@ -77,24 +77,28 @@ section p {
     margin-bottom: 20px;
 }
 
-
+/*testing
 /* Gallery Styles */
 #gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: space-between; /* Center align the gallery items */
 }
 
 .artwork {
-    flex: 1 1 calc(33.333% - 20px);
+    flex: 0 1 calc(25% - 20px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin-bottom: 20px; /* Add some space below each artwork */
+    max-width: 150px;
 }
 
 .artwork img {
     width: 100%;
     height: auto;
     display: block;
+    max-width: 150px; 
 }
 
 .artwork p {
@@ -102,6 +106,15 @@ section p {
     text-align: center;
     background-color: #f5f5f5;
     margin: 0;
+}
+
+#zoomed-image img {
+    width: 100%;
+    max-width: 800px; /* Limit the max width */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image */
+    padding: 20px;
 }
 
 /* Contact Form Styles */
@@ -170,3 +183,5 @@ footer {
         flex: 1 1 100%;
     }
 }
+
+
