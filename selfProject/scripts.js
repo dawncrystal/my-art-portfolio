@@ -39,3 +39,30 @@ function addComment(artworkId) {
         .catch(error => console.error('Error:', error));
     }
 }
+
+// Add event listeners to images to show comment form when clicked
+const artworkImages = document.querySelectorAll('.artwork img');
+artworkImages.forEach(image => {
+    image.addEventListener('click', function() {
+        const artworkId = this.parentElement.id;
+        showCommentForm(artworkId);
+    });
+});
+
+// Add event listeners to like buttons to handle liking an artwork
+const likeButtons = document.querySelectorAll('.artwork button.like-button');
+likeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const artworkId = this.parentElement.id;
+        likeArtwork(artworkId);
+    });
+});
+
+// Add event listeners to comment buttons to handle adding a comment for an artwork
+const commentButtons = document.querySelectorAll('.artwork button.comment-button');
+commentButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const artworkId = this.parentElement.id;
+        addComment(artworkId);
+    });
+});
